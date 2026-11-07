@@ -1,0 +1,88 @@
+/*Tags*/
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: darkslategray;
+    margin: 5%;
+    align-items: center;
+}
+main {
+    background-color: darkolivegreen;
+    margin: 8px;
+    display: grid;
+    max-width: 95%;
+    gap: 8px;
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas:    "h h"
+                            "n n"
+                            "ar as"
+                            "f f";
+}
+header {
+    grid-area: h;
+    text-align: center;
+    margin: 16px;
+    border: solid 4px cadetblue;
+    border-radius: 8px;
+    background-color: darkseagreen;
+}
+nav {
+    grid-area: n;
+    border: solid 4px cadetblue;
+    border-radius: 8px;
+    background-color: darkseagreen;
+}
+    nav ul {
+        list-style-type: none;
+        margin: 4px;
+        padding: 4px;
+        display: grid;
+        grid-template-columns: 128px 128px 128px 128px 128px;
+    }
+        nav ul li {
+            margin: 4px;
+            padding: 4px;
+            background-color: black;
+            border: solid 2px white;
+            border-radius: 4px;
+        }
+        nav li:hover {
+            filter: invert();
+        }
+article {
+    grid-area: ar;
+    text-align: justify;
+    border: solid 4px cadetblue;
+    border-radius: 8px;
+    background-color: darkseagreen;
+}
+aside {
+    grid-area: as;
+    text-align: left;
+    border: solid 4px cadetblue;
+    border-radius: 8px;
+    background-color: darkseagreen;
+}
+footer {
+    grid-area: f;
+    border: solid 4px cadetblue;
+    border-radius: 8px;
+    background-color: darkseagreen;
+    text-align: center;
+}
+img {
+    border: solid 4px cadetblue;
+    border-radius: 8px;
+    max-width: 50%;
+}
+
+/*Classes*/
+
+.routeimg_and_caption {
+    text-align: center;
+    font-style: italic;
+    font-size: small;
+    display: grid;
+    max-width: 90%;
+    grid-template-rows: 2fr 2fr 1fr;
+}
