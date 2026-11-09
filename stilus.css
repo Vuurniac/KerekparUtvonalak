@@ -14,18 +14,17 @@ main {
     border-radius: 100%;
     margin: 1%;
     display: grid;
-    gap: 8px;
-    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+    grid-template-columns: 3fr 1fr;
     grid-template-areas:    "h h"
-                            "n n"
-                            "ar as"
-                            "f f";
+    "n n"
+    "ar as"
+    "f f";
 }
 header {
     grid-area: h;
     text-align: center;
-    margin: 1%;
-    margin-top: 2%;
+    margin: 0% 20% 0% 20%;
     border: groove 4px rgb(20,200,20);
     border-radius: 8px;
     background-color: black;
@@ -33,7 +32,7 @@ header {
 nav {
     grid-area: n;
     margin: auto;
-    margin-left: 1%;
+    padding: 8px;
     border: groove 4px rgb(20,200,20);
     border-radius: 8px;
     background-color: black;
@@ -52,28 +51,32 @@ nav ul li {
     border: groove 4px red;
     border-radius: 4px;
     text-align: center;
+    transition: filter 1s;
+    filter: none;
 }
 nav li:hover {
+    transition: filter 1s;
     filter: invert();
-
 }
 article {
     grid-area: ar;
     text-align: justify;
-    margin: 1%;
-    padding: 8px;
+    /*! margin: 0% 1% 0% 1%; */
+    padding: 16px;
     border: groove 4px rgb(20,200,20);
     border-radius: 8px;
     background-color: black;
 }
 aside {
     grid-area: as;
-    margin: 1%;
-    padding: 8px;
-    text-align: left;
+    /*! margin: 1%; */
+    padding: 16px;
     border: groove 4px rgb(20,200,20);
     border-radius: 8px;
     background-color: black;
+}
+aside h4 {
+    text-align: center;
 }
 footer {
     grid-area: f;
@@ -81,24 +84,54 @@ footer {
     border-radius: 8px;
     background-color: black;
     text-align: center;
+    margin: 0% 20% 0% 20%;
 }
 img {
     border: groove 4px rgb(20,200,20);
     border-radius: 8px;
     margin: auto;
-    max-width: 50%;
+    max-width: 95%;
 }
 a {
     text-decoration: none;
     color: rgb(255,100,100);
+    transition: filter 1s;
+    filter: none;
+    text-shadow: none;
+}
+a:hover {
+    transition: filter 1s;
+    text-shadow: none;
+    filter: invert();
 }
 
 /*Classes*/
-
-.routeimg_and_caption {
+div.routeimg_and_caption {
     text-align: center;
     font-style: italic;
-    font-size: small;
+    font-size: 13px;
     display: grid;
-    grid-template-rows: 2fr 2fr 1fr;
+    gap:16px;
+}
+img.routemap {
+    border: groove 4px rgb(20,200,20);
+    border-radius: 8px;
+    margin: auto;
+}
+ul.routedata_left{
+    grid-area: dtl;
+    text-align: left;
+}
+ul.routedata_right{
+    grid-area: dtr;
+    text-align: right;
+}
+div.routedata{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "dtl dtr";
+}
+div.routedata ul{
+    list-style-type: none;
+    padding: 0px;
 }
