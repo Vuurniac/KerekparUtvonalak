@@ -11,6 +11,8 @@ body {
 main {
     background-color: rgb(100,2,2);
     border: groove 32px rgb(60,2,2);
+    transition: border 1s;
+    transition: background-color 1s;
     border-radius: 100%;
     margin: 1%;
     display: grid;
@@ -87,10 +89,16 @@ footer {
     margin: 0% 20% 0% 20%;
 }
 img {
-    border: groove 4px rgb(20,200,20);
-    border-radius: 8px;
+    border: groove 4px red;
+    border-radius: 4px;
     margin: auto;
+    max-width: 75%;
+    transition: max-width 0.5s;
+    padding: 4px;
+}
+img:hover {
     max-width: 95%;
+    transition: max-width 0.5s;
 }
 a {
     text-decoration: none;
@@ -113,9 +121,20 @@ div.routeimg_and_caption {
     display: grid;
     gap:16px;
 }
+div.routecard_paragraphs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+div.routecard_paragraphs p {
+    padding: 0px 2% 0px 2%;
+}
+div.routecard_links ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 img.routemap {
-    border: groove 4px rgb(20,200,20);
-    border-radius: 8px;
+    border: groove 4px red;
+    border-radius: 4px;
     margin: auto;
 }
 ul.routedata_left{
@@ -134,4 +153,40 @@ div.routedata{
 div.routedata ul{
     list-style-type: none;
     padding: 0px;
+}
+
+/*Responsivity*/
+@media screen and (max-width: 1280px) {
+    div.routecard_links ul {
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width: 1024px) {
+    div.routecard_paragraphs {
+        grid-template-columns: 1fr;
+    }
+    main {
+        background-color: initial;
+        border: none;
+        transition: border 1s;
+        transition: background-color 1s;
+    }
+}
+@media screen and (max-width: 768px) {
+    nav ul {
+        grid-template-columns: 128px 128px;
+    }
+}
+@media screen and (max-width: 640px) {
+    nav ul {
+        grid-template-columns: 128px;
+    }
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas:    "h"
+        "n"
+        "ar"
+        "as"
+        "f";
+    }
 }
